@@ -1,0 +1,95 @@
+.coctails-section {
+  width: 320px;
+  margin: 0 auto;
+}
+
+.coctails-section__title {
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 191%;
+  color: #202025;
+
+  text-align: center;
+  margin-bottom: 60px;
+  margin-top: 0;
+}
+
+.coctails-section__coctails-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.coctails-section__coctail {
+  list-style-type: none;
+  margin-bottom: 20px;
+}
+
+.coctails-section__coctail-container {
+  width: 282px;
+  border: 1px solid #fd5103;
+  border-radius: 4px;
+}
+
+.coctails-section__coctail-img {
+  width: 280px;
+  border-radius: 4px;
+}
+
+.coctails-section__coctail-name {
+  font-family: 'Roboto';
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 162%;
+  color: #202025;
+
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 15px;
+}
+
+.coctails-section__button {
+  font-family: 'Roboto';
+  font-size: 14px;
+  line-height: 171%;
+  letter-spacing: 0.02em;
+
+  width: 110px;
+  height: 40px;
+  margin-left: 19px;
+  margin-right: 0;
+  margin-bottom: 25px;
+  border-radius: 4px;
+  position: relative;
+}
+
+.coctails-section__learn-button {
+  background-color: #fd5103;
+  color: #ffffff;
+  border: none;
+}
+
+.coctails-section__like-button {
+  background-color: #ffffff;
+  color: #fd5103;
+  border: 1px solid #fd5103;
+}
+
+.coctails-section__like-text {
+  margin-right: 30px;
+}
+
+.coctails-section__like-text::after {
+  content: url(../images/add-like-heart.svg);
+  margin-left: 5px;
+  position: absolute;
+  top: 10;
+}
+
+.empty-footer {
+  height: 110px;
+  background-color: #fd5103;
+}
