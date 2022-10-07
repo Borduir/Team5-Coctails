@@ -1,0 +1,21 @@
+li {
+    list-style: none;
+  }
+
+.hero-box{
+    width: 347px;
+    display: grid;
+
+justify-content: center;
+}
+.hero-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+.hero-span{
+    line-height: 20px;
+    font-size: 150%;
+margin-right: 10px;
+}
