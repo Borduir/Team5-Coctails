@@ -1,0 +1,262 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+ul,
+ol {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+  
+  li {
+    list-style: none;
+  }
+.container{
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-top: 15px;
+}
+
+
+//   body{
+// background-color: #202025;
+
+//   }
+.is-hiden{
+  display: none;
+ }
+.hero{
+ 
+&-title{
+    font-family: 'Poppins';
+    font-style: normal;
+  
+    color: #FD5103;
+  }
+  &-text{
+    display: block;
+    font-family: 'Poppins';
+    font-style: normal;
+    color: #202025;
+  }
+ &-list{
+    justify-content: center;
+  }
+  &-item{
+
+    justify-content: center;
+    font-family: 'Poppins';
+    font-style: normal;
+    align-items: center;
+    color: #5F6775;
+    
+  }
+}
+
+@media screen and (min-width: 1200px){
+.container {
+    width: 1200px;
+}
+.hero{
+  display: flex;
+  padding-top: 40px;
+  padding-bottom: 60px;
+  &__box {
+    margin-right: auto;
+   
+   }
+   &-container{
+    width: 501px;
+    height: 580px;
+  background-image: url(../images/delicious-sangria-cocktail-w1200px.png);
+  transform: matrix(1, 0, 0, 1, 0,-60);
+  
+  }
+  &-title{
+    display: block;
+    font-weight: 600;
+    font-size: 52px;
+    line-height: 80px;
+  }
+  &-text{
+    margin-top: 40;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 28px;
+      /* identical to box height, or 156% */
+      letter-spacing: 0.02em;
+    
+    }
+    &-list {
+      margin-top: 40px;
+        width: 520px;
+        display: flex;
+        flex-wrap: wrap;
+        height: 120px;
+   
+      }
+      &-item{
+        width: 40px;
+        height: 40px;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 3.6%;
+        display: flex;
+      }
+}
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1199px){
+.container {
+    width: 768px;
+}
+.hero{
+  display: flex;
+  padding-top: 68px;
+  padding-bottom: 60px;
+
+&__box{
+  margin-right: auto;
+ 
+ }
+ &-container{
+  width: 336px;
+  height: 465px;
+  background-size: cover;
+background-image: url(../images/delicious-sangria-cocktail-w768px.png);
+transform: matrix(1, 0, 0, 1, 0,-65);
+
+}
+ 
+&-title{
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 42px;
+}
+&-text{
+ 
+margin-top: 40;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 28px;
+  /* identical to box height, or 156% */
+  letter-spacing: 0.02em;
+
+}
+
+&-list {
+  margin-top: 40px;
+    width: 324px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 75px;
+ 
+  }
+  &-item{
+    width: 24px;
+    height: 25px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 2.1%;
+    display: flex;
+  }
+}
+}
+
+@media screen and (max-width: 767px){
+  .container {
+      width: 320px;
+  }
+  .hero{
+    padding-top: 60px;
+    padding-bottom: 40px;
+
+    &-list {
+      margin-top: 40px;
+      }
+      &-item{
+        width: 24px;
+        height: 25px;
+ 
+      }
+      &-title{
+        margin-bottom: 28px;
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 42px;
+      }
+      &-text{
+       
+      margin-top: 28px;
+      
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 28px;
+        /* identical to box height, or 156% */
+        letter-spacing: 0.02em;
+        opacity: 0.8;
+      }
+    &-container{
+      width: 300px;
+      height: 368px;
+      background-size: cover;
+    background-image: url(../images/delicious-sangria-cocktail-w768px.png);
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    
+    }
+    &-div {
+  
+  display: flex;
+justify-content: center;
+    }
+
+    &-select{
+      width: 93px;
+      height: 34px;
+
+      &:hover{
+        color: #FD5103;
+      }
+    }
+  }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
