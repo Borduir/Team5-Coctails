@@ -72,19 +72,24 @@
   border: none;
 }
 
-.coctails-section__like-button {
+.coctails-section__like-button,
+.coctails-section__dislike-button {
   background-color: #ffffff;
   color: #fd5103;
   border: 1px solid #fd5103;
+  padding-right: 30px;
 }
 
-.coctails-section__like-text {
-  margin-right: 30px;
-}
-
-.coctails-section__like-text::after {
+.coctails-section__like-button::before {
   content: url(../images/add-like-heart.svg);
-  margin-left: 5px;
+  margin-left: 50px;
+  position: absolute;
+  top: 10;
+}
+
+.coctails-section__dislike-button::before {
+  content: url(../images/add-like-heart.svg);
+  margin-left: 60px;
   position: absolute;
   top: 10;
 }
