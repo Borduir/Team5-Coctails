@@ -98,3 +98,31 @@
   height: 110px;
   background-color: #fd5103;
 }
+
+.coctails-section__coctail-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+
+  width: 320px;
+  padding: 40px 20px;
+
+  background-color: #fff;
+  overflow-y: scroll;
+}
+
+.coctail-modal__close-modal-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.coctails-section__coctail-modal--is-hidden {
+  display: none;
+}
+.coctail-modal__ingredient {
+  border: none;
+  background-color: inherit;
+}
