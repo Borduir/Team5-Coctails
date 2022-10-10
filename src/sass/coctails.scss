@@ -81,6 +81,7 @@
   padding-right: 30px;
 }
 
+.ingredient-modal__like-ingredient-btn,
 .coctail-modal__like-coctail-btn,
 .coctail-modal__dislike-coctail-btn {
   background-color: #fd5103;
@@ -106,6 +107,8 @@
   height: 110px;
   background-color: #fd5103;
 }
+
+.coctails-section__ingredient-modal-backdrop,
 .coctails-section__coctail-modal-backdrop {
   position: fixed;
   top: 0;
@@ -122,6 +125,11 @@
   }
 }
 
+.coctails-section__ingredient-modal-backdrop {
+  z-index: 9;
+}
+
+.coctails-section__ingredient-modal,
 .coctails-section__coctail-modal {
   position: absolute;
   overflow-y: none;
@@ -136,6 +144,11 @@
   }
 }
 
+.coctails-section__ingredient-modal {
+  z-index: 10;
+}
+
+.ingredient-modal__close-ingredient-btn,
 .coctail-modal__close-modal-btn {
   position: absolute;
   background-color: inherit;
