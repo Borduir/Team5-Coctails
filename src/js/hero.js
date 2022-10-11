@@ -17,7 +17,9 @@ const heroTitleImg = () =>{
 
 function creaitMarkapArr(e) { 
 return e.map(e => {
-    return `<li class=hero-item data-name=${e}>${e}</li>`
+    return `<li class=hero-item >
+        <button class=hero-button data-name=${e}>${e}</button>
+        </li>`
     });
     }
     

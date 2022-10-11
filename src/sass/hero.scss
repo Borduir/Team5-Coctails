@@ -66,8 +66,9 @@ dd {
  &-list{
     justify-content: center;
   }
-  &-item{
-
+  &-button{
+    border: 0;
+    background: transparent;
     justify-content: center;
     font-family: 'Poppins';
     font-style: normal;
@@ -119,7 +120,9 @@ dd {
         height: 120px;
    
       }
-      &-item{
+      &-button{
+        border: 0;
+        background: transparent;
         width: 40px;
         height: 40px;
         font-weight: 700;
@@ -179,13 +182,16 @@ margin-top: 40;
  
   }
   &-item{
+
+  }
+  &-button{
     width: 24px;
     height: 25px;
     font-weight: 700;
     font-size: 14px;
     line-height: 2.1%;
     display: flex;
-  }
+}
 }
 }
 

@@ -94,7 +94,7 @@
 76C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\node_modules\v8-compile-cache133096358278591831 1
 129C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\node_modules\@parcel\node-resolver-core\test\fixture\packages\source-alias\dist.js133096358284269924 0
 95C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\node_modules\htmlparser2\lib\WritableStream.d.ts133096358283145362 0
-51C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\dist133098814736290592 1
+51C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\dist133099734050165884 1
 75C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\node_modules\source-map\dist133096358284542033 1
 75C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\node_modules\chalk\readme.md133096358279529332 0
 95C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\node_modules\htmlnano\lib\modules\mergeStyles.js133096358282696238 0
@@ -149,7 +149,7 @@
 89C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\node_modules\type-fest\source\mutable.d.ts133096358284060493 0
 59C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\README.pl.md133096356433110884 0
 94C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\node_modules\caniuse-lite\data\features\flac.js133096358293014546 0
-61C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\src\js\hero.js133098814735169962 0
+61C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\src\js\hero.js133099731209926985 0
 99C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\node_modules\@nodelib\fs.walk\out\readers\async.d.ts133096358282965515 0
 85C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\node_modules\svgo\plugins\prefixIds.js133096358286278208 0
 97C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\node_modules\caniuse-lite\data\features\ac3-ec3.js133096358278541961 0
@@ -220,7 +220,7 @@
 67C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\src\sass\header.scss133096356433430839 0
 98C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\node_modules\type-fest\source\conditional-keys.d.ts133096358281274658 0
 106C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\node_modules\@parcel\transformer-react-refresh-wrap\LICENSE133096358276009258 0
-65C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\src\sass\hero.scss133097150803263484 0
+65C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\src\sass\hero.scss133099734109964036 0
 87C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\node_modules\regenerator-runtime\LICENSE133096358275889569 0
 74C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\node_modules\@parcel\fs\src133096358281863087 1
 84C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\node_modules\safe-buffer\package.json133096358277295298 0
@@ -4626,7 +4626,7 @@
 95C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\node_modules\@jridgewell\source-map\package.json133096358278013373 0
 92C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\node_modules\@jridgewell\source-map\README.md133096358280775987 0
 102C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\node_modules\@jridgewell\source-map\dist\source-map.mjs133096358281354436 0
-70C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\dist\index.b07a87f3.css133097165681181499 0
+70C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\dist\index.b07a87f3.css133099734050106049 0
 106C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\node_modules\@jridgewell\source-map\dist\source-map.mjs.map133096358279289965 0
 105C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\node_modules\@jridgewell\source-map\dist\source-map.umd.js133096358277285322 0
 109C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\node_modules\@jridgewell\source-map\dist\source-map.umd.js.map133096358280347138 0
@@ -4717,12 +4717,12 @@
 69C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\dist\index.2edba2db.js133097165681271246 0
 73C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\dist\index.2edba2db.js.map133097165681326196 0
 69C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\dist\index.3756c8f3.js133097165681286373 0
-69C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\dist\index.4aabfc5f.js133098814736250700 0
-73C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\dist\index.4aabfc5f.js.map133098814736280625 0
+69C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\dist\index.4aabfc5f.js133099731330395794 0
+73C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\dist\index.4aabfc5f.js.map133099731330435449 0
 73C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\dist\index.69a33f38.js.map133097165681336167 0
 69C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\dist\index.6e5848f4.js133097165681191458 0
 73C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\dist\index.6e5848f4.js.map133097165681271246 0
-74C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\dist\index.b07a87f3.css.map133097165681181499 0
+74C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\dist\index.b07a87f3.css.map133099734050106049 0
 73C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\dist\index.c10b4f24.js.map133097165681261274 0
 79C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\assets\actions-config-step-1.png133096356433190935 0
 79C:\Users\Zhe1a\Documents\GitHub\Team5-Coctails\assets\actions-config-step-2.png133096356433217107 0
