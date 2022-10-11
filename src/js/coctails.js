@@ -1,71 +1,56 @@
 'use strict';
 // РАБОЧАЯ ВЕРСИЯ
-const coctailsList = document.querySelector('.coctails-section__coctails-list');
-const coctailsSection = document.querySelector('.coctails-section');
-const coctailModal = document.querySelector('.coctails-section__coctail-modal');
-const coctailModalBackdrop = document.querySelector(
+export const coctailsList = document.querySelector(
+  '.coctails-section__coctails-list'
+);
+export const coctailsSection = document.querySelector('.coctails-section');
+export const coctailModal = document.querySelector(
+  '.coctails-section__coctail-modal'
+);
+export const coctailModalBackdrop = document.querySelector(
   '.coctails-section__coctail-modal-backdrop'
 );
-const ingredientModal = document.querySelector(
+export const ingredientModal = document.querySelector(
   '.coctails-section__ingredient-modal'
 );
-const ingredientModalBackdrop = document.querySelector(
+export const ingredientModalBackdrop = document.querySelector(
   '.coctails-section__ingredient-modal-backdrop'
 );
 
-let coctailNumber = 0;
+// переменная для подсчета к-ва коктейлей, которые нужно отрисовать
+export let coctailsAmount = 0;
+// переменная для идентификации кнопок коктейля
+export let coctailNumber = 0;
+// переменная для определения типа добавляемого в избранное(коктейль или ингредиент)
+export let storageKey = 0;
 
-// создаём глобальную переменную, с помощью которой
-// будем в функции проверять добавляем в избранное коктейль или ингредиент
-let storageKey = 0;
+////////////////////////////////////////////////////////////////////////////////////////////////
+//                   НАЧАЛО ФУНКЦИЙ
 
-// проверяем есть ли в памяти коктейли и ингредиенты
-let favoriteCoctails = [];
-try {
-  if (JSON.parse(localStorage.getItem('favoriteCoctails')).length !== 0) {
-    favoriteCoctails = JSON.parse(localStorage.getItem('favoriteCoctails'));
-  }
-} catch {
-  localStorage.setItem('favoriteCoctails', JSON.stringify(favoriteCoctails));
-}
-
-// проверяем есть ли в памяти ингредиенты
-let favoriteIngredients = [];
-try {
-  if (JSON.parse(localStorage.getItem('favoriteIngredients')).length !== 0) {
-    favoriteIngredients = JSON.parse(
-      localStorage.getItem('favoriteIngredients')
-    );
-  }
-} catch {
-  localStorage.setItem(
-    'favoriteIngredients',
-    JSON.stringify(favoriteIngredients)
-  );
-}
-
-// считаем количество коктейлей,
+// функция, которая считает количество коктейлей,
 // которые нужно отрисовать в зависимости от разрешения экрана
-let coctailsAmount = 0;
-const coctailsSectionStyles = getComputedStyle(coctailsSection);
-if (coctailsSectionStyles.width === '320px') {
-  coctailsAmount = 3;
-} else if (coctailsSectionStyles.width === '768px') {
-  coctailsAmount = 6;
-} else {
-  coctailsAmount = 9;
-}
+export const getCocktailsAmount = section => {
+  const coctailsSectionStyles = getComputedStyle(section);
+  if (coctailsSectionStyles.width === '320px') {
+    coctailsAmount = 3;
+  } else if (coctailsSectionStyles.width === '768px') {
+    coctailsAmount = 6;
+  } else {
+    coctailsAmount = 9;
+  }
+};
 
 // функция, которая забирает у бекенда коктейли/ингредиенты по ссылке
-const fetchCoctailOrIngredient = async link => {
+export const fetchCoctailOrIngredient = async link => {
   const response = await fetch(link);
   const newResponse = await response.json();
   return newResponse;
 };
 
-//создаём функцию, которая проверяет
+// функция, которая проверяет
 // находится ли коктейль или ингредиент в избранном
-const checkFavoriteOrNot = (
+// и меняет кнопку коктейля на "добавить в избранное" или "убрать из избранного"
+export const checkFavoriteOrNot = (
   coctailName,
   typeOfFavorites,
   likeBtn,
@@ -87,7 +72,7 @@ const checkFavoriteOrNot = (
     )
   ) {
     // проверяем есть ли коктейль/ингредиент текущей итерации цикла
-    //  в списке избранных
+    // в списке избранных
     if (document.querySelector(`#ModalLikeIngredientBtn`)) {
       currentFuncLikeBtn = document.querySelector(`#ModalLikeIngredientBtn`);
     } else if (document.querySelector(`#ModalLikeCoctailBtn`)) {
@@ -106,7 +91,7 @@ const checkFavoriteOrNot = (
 
 // функция, которая добавляет/удаляет коктейль/игредиент в избранное
 // и меняет кнопку "добавить в избранное" на "удалить из избранного" и наоборот
-const makeFavoriteOrNot = (
+export const makeFavoriteOrNot = (
   event,
   likeButton,
   dislikeButton,
@@ -149,7 +134,7 @@ const makeFavoriteOrNot = (
 };
 
 // функция открытия/закрытия модалки
-const modalToggleHidden = (
+export const modalToggleHidden = (
   backdropName,
   backdropClass,
   modalName,
@@ -160,7 +145,7 @@ const modalToggleHidden = (
 };
 
 // функция создания списка ингредиентов
-const createIngredients = coctail => {
+export const createIngredients = coctail => {
   const ingredientsList = document.querySelector('.coctail-modal__list');
   for (const key in coctail) {
     if (key.includes('strIngredient') && coctail[key] !== null) {
@@ -170,15 +155,45 @@ const createIngredients = coctail => {
 };
 
 // функция изменения текста кнопок модалки(он отличается от того, что на главной странице)
-const modalButtonTextChange = (button, buttonClass) => {
+export const modalButtonTextChange = (button, buttonClass) => {
   if (button.classList.contains(buttonClass)) {
     button.textContent = 'Add to favorite';
   } else {
     button.textContent = 'Remove from favorite';
   }
 };
-
+//                   КОНЕЦ ФУНКЦИЙ
 ////////////////////////////////////////////////////////////////////////////////////////////////
+//                   НАЧАЛО ДВИЖУХИ
+
+// проверяем есть ли в памяти коктейли и ингредиенты
+let favoriteCoctails = [];
+try {
+  if (JSON.parse(localStorage.getItem('favoriteCoctails')).length !== 0) {
+    favoriteCoctails = JSON.parse(localStorage.getItem('favoriteCoctails'));
+  }
+} catch {
+  localStorage.setItem('favoriteCoctails', JSON.stringify(favoriteCoctails));
+}
+
+// проверяем есть ли в памяти ингредиенты
+let favoriteIngredients = [];
+try {
+  if (JSON.parse(localStorage.getItem('favoriteIngredients')).length !== 0) {
+    favoriteIngredients = JSON.parse(
+      localStorage.getItem('favoriteIngredients')
+    );
+  }
+} catch {
+  localStorage.setItem(
+    'favoriteIngredients',
+    JSON.stringify(favoriteIngredients)
+  );
+}
+
+// определяем сколько карточек нужно отрисовать
+getCocktailsAmount(coctailsSection);
+
 // дальше черная магия.
 // цикл делает столько итераций, сколько нужно отрисовать коктейлей
 // НАЧАЛО ЦИКЛА
