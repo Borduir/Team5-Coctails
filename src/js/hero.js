@@ -37,10 +37,11 @@ return e.map(e => {
       
         function clickHeroTitel(e){
         const target = e.target.dataset.name
-        const hover = e.target.value
-
+        const hover = e.target
+        const item = e.currentTarget.querySelectorAll(".hero-button")
         if(innerWidth < 767){
-            cocktalis(hover).then(data=>{
+            const hoverTarget = e.target.value
+            cocktalis(hoverTarget).then(data=>{
                 console.log(data)
             });
            }
@@ -48,7 +49,17 @@ return e.map(e => {
             return
         }
         if(innerWidth > 767){
+            item.forEach(e => {
+                if(!e.classList.contains('is-hover')){return}
+                e.classList.remove('is-hover')
+            })
+         
+            console.log(hover);
+            hover.classList.add("is-hover")
+    
              cocktalis(target).then(data=>{
+                const {drinks} = data
+             
                  console.log(data)
              });
             }

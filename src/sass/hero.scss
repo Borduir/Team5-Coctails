@@ -49,6 +49,7 @@ dd {
 .is-hiden{
   display: none;
  }
+
 .hero{
  
 &-title{
@@ -254,7 +255,9 @@ justify-content: center;
   }
 
 
-
+  .is-hover{
+    color: #FD5103;
+   }
 
 
 
