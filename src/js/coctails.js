@@ -227,7 +227,7 @@ export const ingredientModalMarckup = (
 ////////////////////////////////////////////////////////////////////////////////////////////////
 //                   НАЧАЛО ДВИЖУХИ
 
-// проверяем есть ли в памяти коктейли и ингредиенты
+// проверяем есть ли в памяти коктейли
 let favoriteCoctails = [];
 try {
   if (JSON.parse(localStorage.getItem('favoriteCoctails')).length !== 0) {
