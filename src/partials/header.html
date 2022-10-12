@@ -19,10 +19,17 @@
           height="26px"
       /></a>
       <ul class="list">
-        <li><a href="">Favorite</a></li>
-        <li><a href="">Ingridients</a></li>
+        <li><a class="link" href="./index.html">Home</a></li>
+        <li><a class="link" href="">Favorite</a></li>
       </ul>
-      <input class="header-input" type="text" placeholder="Search" />
+      <div class="input-box">
+        <div class="input-image-box-tablet">
+          <svg class="magnifying-glass">
+            <use href="./images/svg/header-sprite.svg#icon-bx_search-1"></use>
+          </svg>
+        </div>
+        <input class="header-input" type="text" placeholder="Search" />
+      </div>
       <button
         type="button"
         class="menu-batton"
@@ -43,16 +50,20 @@
       </button>
 
       <div class="header-mobile-menu">
-        <div class="input-box">
-          <svg class="magnifying-glass">
-            <use href="./images/svg/header-sprite.svg#icon-bx_search-1"></use>
-          </svg>
+        <div class="input-box-mobile">
+          <div class="input-image-box">
+            <svg class="magnifying-glass">
+              <use href="./images/svg/header-sprite.svg#icon-bx_search-1"></use>
+            </svg>
+          </div>
           <input class="header-input-mobile" type="text" placeholder="Search" />
-          <ul>
-            <li><a href="">Favorite</a></li>
-            <li><a href="">Ingridients</a></li>
-          </ul>
         </div>
+        <ul class="mobile-list">
+          <li><a class="mobile-link" href="./index.html">Home</a></li>
+          <li>
+            <a class="mobile-link favorite" href="">Favorite</a>
+          </li>
+        </ul>
       </div>
     </nav>
   </div>
