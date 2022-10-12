@@ -162,6 +162,67 @@ export const modalButtonTextChange = (button, buttonClass) => {
     button.textContent = 'Remove from favorite';
   }
 };
+
+// функция добавляет разметку карточки коктейля из текущей итерации цикла
+//с кнопкой "добавить в избранное"
+export const coctailCardMarkup = (
+  markupPlace,
+  cocktailName,
+  cocktailImgLink
+) => {
+  markupPlace.innerHTML += `<li class='coctails-section__coctail'>
+            <div class='coctails-section__coctail-container'>
+                <img class='coctails-section__coctail-img' srcset="${cocktailImgLink}" alt="${cocktailName}">
+                <h3 class='coctails-section__coctail-name'>${cocktailName}</h3>
+                <div class="coctails-section__coctail-buttons-container">
+                    <button class="coctails-section__button coctails-section__learn-button" type="button">Learn more</button>
+                    <button class="coctails-section__button coctails-section__favorite-button coctails-section__like-button" type="button" id="likeBtn${coctailNumber}">Add to</button>
+                </div>
+            </div>
+        </li>`;
+};
+
+// функция разметки модалки коктейля
+export const coctailModalMarckup = (
+  marckupPlace,
+  coctailName,
+  coctailImgLink,
+  coctailInstructions
+) => {
+  marckupPlace.innerHTML = `<h3 class = "coctail-modal__coctail-name" >${coctailName}</h3>
+                  <h4 class = "coctail-modal__coctail-description">Instractions:</h4>
+                  <p class = "coctail-modal__coctail-instruction">${coctailInstructions}</p>
+                  <img class='coctails-section__coctail-img' src="${coctailImgLink}" alt="${coctailName}">
+                  <h4 class = "coctail-modal__coctail-description">Ingredients</h4>
+                  <p>Per cocktail</p>
+                  <ul class = "coctail-modal__list">
+                  </ul>
+                  <button class = "coctail-modal__like-coctail-btn" type="button" id="ModalLikeCoctailBtn">Add to favorite</button>
+                  <button class = "coctail-modal__close-modal-btn" type="button"></button>
+                </div>`;
+};
+
+// функция разметки модалки ингредиента
+export const ingredientModalMarckup = (
+  marckupPlace,
+  ingName,
+  ingDescription,
+  ingType,
+  ingAlcohol
+) => {
+  if (!ingDescription) ingDescription = 'sorry, we have no data :(';
+  if (!ingType) ingType = 'sorry, we have no data :(';
+  if (!ingAlcohol) ingAlcohol = 'sorry, we have no data :(';
+  marckupPlace.innerHTML = `<h3 class = "coctail-modal__coctail-name">${ingName}</h3>
+                        <p class = "coctail-modal__coctail-instruction">${ingDescription}</p>
+                        <ul class = "coctail-modal__list">
+                          <li><p class = "coctail-modal__list-item-data">Type: ${ingType}</p></li>
+                          <li><p  class = "coctail-modal__list-item-data">Alkoholic? - ${ingAlcohol}</p></li>
+                        </ul>
+                        <button class = "ingredient-modal__like-ingredient-btn" type="button" id="ModalLikeIngredientBtn">Add to favorite</button>
+                        <button class = "ingredient-modal__close-ingredient-btn" type="button"></button>
+                        `;
+};
 //                   КОНЕЦ ФУНКЦИЙ
 ////////////////////////////////////////////////////////////////////////////////////////////////
 //                   НАЧАЛО ДВИЖУХИ
@@ -203,23 +264,12 @@ for (let iteration = 0; iteration < coctailsAmount; iteration += 1) {
     'https://www.thecocktaildb.com/api/json/v1/1/random.php'
   )
     .then(newResponse => {
-      const { strDrinkThumb, strDrink } = newResponse.drinks[0];
-
-      // добавляем разметку с коктейлем из текущей итерации цикла
-      //с кнопкой "добавить в избранное"
-      coctailsList.innerHTML += `<li class='coctails-section__coctail'>
-            <div class='coctails-section__coctail-container'>
-                <img class='coctails-section__coctail-img' srcset="${strDrinkThumb}" alt="${strDrink}">
-                <h3 class='coctails-section__coctail-name'>${strDrink}</h3>
-                <div class="coctails-section__coctail-buttons-container">
-                    <button class="coctails-section__button coctails-section__learn-button" type="button">Learn more</button>
-                    <button class="coctails-section__button coctails-section__favorite-button coctails-section__like-button" type="button" id="likeBtn${coctailNumber}">Add to</button>
-                </div>
-            </div>
-        </li>`;
-
       // увеличиваем счетчик коклейлей на 1
       coctailNumber += 1;
+
+      // создаем разметку карточки
+      const { strDrinkThumb, strDrink } = newResponse.drinks[0];
+      coctailCardMarkup(coctailsList, strDrink, strDrinkThumb);
 
       // проверяем находится ли коктейль или ингредиент в избранном
       checkFavoriteOrNot(
@@ -271,17 +321,12 @@ for (let iteration = 0; iteration < coctailsAmount; iteration += 1) {
                 coctail.drinks[0];
 
               // создаем изначальную разметку модалки
-              coctailModal.innerHTML = `<h3 class = "coctail-modal__coctail-name" >${strDrink}</h3>
-                  <h4 class = "coctail-modal__coctail-description">Instractions:</h4>
-                  <p class = "coctail-modal__coctail-instruction">${strInstructions}</p>
-                  <img class='coctails-section__coctail-img' src="${strDrinkThumb}" alt="${strDrink}">
-                  <h4 class = "coctail-modal__coctail-description">Ingredients</h4>
-                  <p>Per cocktail</p>
-                  <ul class = "coctail-modal__list">
-                  </ul>
-                  <button class = "coctail-modal__like-coctail-btn" type="button" id="ModalLikeCoctailBtn">Add to favorite</button>
-                  <button class = "coctail-modal__close-modal-btn" type="button"></button>
-                </div>`;
+              coctailModalMarckup(
+                coctailModal,
+                strDrink,
+                strDrinkThumb,
+                strInstructions
+              );
 
               // создаём переменную текущей кнопки "добавить в избранное"
               const modalLikeBtn = document.querySelector(
@@ -377,16 +422,14 @@ for (let iteration = 0; iteration < coctailsAmount; iteration += 1) {
                         strType,
                       } = newResponse.ingredients[0];
 
-                      //создаем изначальную разметку модалки ингредиента
-                      ingredientModal.innerHTML = `<h3 class = "coctail-modal__coctail-name">${strIngredient}</h3>
-                        <p class = "coctail-modal__coctail-instruction">${strDescription}</p>
-                        <ul class = "coctail-modal__list">
-                          <li><p class = "coctail-modal__list-item-data">Type: ${strType}</p></li>
-                          <li><p  class = "coctail-modal__list-item-data">Alkoholic? - ${strAlcohol}</p></li>
-                        </ul>
-                        <button class = "ingredient-modal__like-ingredient-btn" type="button" id="ModalLikeIngredientBtn">Add to favorite</button>
-                        <button class = "ingredient-modal__close-ingredient-btn" type="button"></button>
-                        `;
+                      // создаем изначальную разметку модалки ингредиента
+                      ingredientModalMarckup(
+                        ingredientModal,
+                        strIngredient,
+                        strDescription,
+                        strType,
+                        strAlcohol
+                      );
 
                       // создаём переменную кнопки "добавить в избранное" модалки ингредиента
                       const ingredientModalLikeBtn = document.querySelector(
