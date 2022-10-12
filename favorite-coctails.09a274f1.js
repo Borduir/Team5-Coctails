@@ -1,2 +1,0 @@
-!function(){"use strict";var n,e=document.querySelector(".hero-list");n=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","1","2","3","4","5","6","7","8","9","0"].map((function(n){return"<li class=hero__span><span data-name=".concat(n,">").concat(n,"</span></li>")})),e.insertAdjacentHTML("beforeend",n.join(""))}();
-//# sourceMappingURL=favorite-coctails.09a274f1.js.map
