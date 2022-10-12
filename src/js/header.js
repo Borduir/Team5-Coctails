@@ -33,6 +33,7 @@ refs.btn.addEventListener('click', onClick);
 function onClick() {
   const expanded = refs.btn.getAttribute('aria-expanded') === 'true' || false;
 
+  refs.btn.classList.toggle('is-open');
   refs.mobileMenu.classList.toggle('is-open');
   refs.btn.setAttribute('aria-expanded', !expanded);
 }

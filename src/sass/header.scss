@@ -54,11 +54,11 @@
   display: block;
 }
 .input-box {
+  height: 40px;
   position: relative;
 }
 .header-input-mobile {
-  padding-bottom: 8px;
-  padding-top: 8px;
+  height: 40px;
   padding-left: 48px;
 
   border: 1px solid #fd5103;
@@ -100,12 +100,14 @@
   color: #5f6775;
   opacity: 0.4;
 }
-.magnifying-glass {
-  position: absolute;
-  top: 8px;
-  left: 8px;
-
+.input-image-box {
+  width: 40px;
+  height: 100%;
+  padding: 8px;
   border-right: 1px solid #fd5103;
+}
+
+.magnifying-glass {
   width: 24px;
   height: 24px;
   @media screen and (min-width: 768px) {
@@ -132,11 +134,13 @@
     display: none;
   }
 }
-.header-mobile-menu.is-open .icon-cross {
-  display: block;
-}
-.header-mobile-menu.is-open .icon-menu {
-  display: none;
+.is-open {
+  .icon-cross {
+    display: block;
+  }
+  .icon-menu {
+    display: none;
+  }
 }
 .list {
   display: flex;
