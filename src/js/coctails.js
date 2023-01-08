@@ -65,12 +65,11 @@ export const checkFavoriteOrNot = (
     storageKey = 0;
   }
   // если коктейль или игредиент находится в избранном
-
-  const storageKeys = JSON.parse(
-    localStorage.getItem(localStorage.key(storageKey))
-  );
-  console.log(storageKeys);
-  if (storageKeys.includes(coctailName)) {
+  if (
+    JSON.parse(localStorage.getItem(localStorage.key(storageKey))).includes(
+      coctailName
+    )
+  ) {
     // проверяем есть ли коктейль/ингредиент текущей итерации цикла
     // в списке избранных
     if (document.querySelector(`#ModalLikeIngredientBtn`)) {
