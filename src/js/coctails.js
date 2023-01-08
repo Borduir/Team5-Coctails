@@ -69,6 +69,7 @@ export const checkFavoriteOrNot = (
   const storageKeys = JSON.parse(
     localStorage.getItem(localStorage.key(storageKey))
   );
+  console.log(storageKeys);
   if (storageKeys.includes(coctailName)) {
     // проверяем есть ли коктейль/ингредиент текущей итерации цикла
     // в списке избранных
@@ -241,7 +242,6 @@ export const ingredientModalMarckup = (
 };
 //                   КОНЕЦ ФУНКЦИЙ
 ////////////////////////////////////////////////////////////////////////////////////////////////
-//                   НАЧАЛО ДВИЖУХИ
 
 // проверяем есть ли в памяти коктейли
 let favoriteCoctails = [];
@@ -271,7 +271,6 @@ try {
 // определяем сколько карточек нужно отрисовать
 getCocktailsAmount(coctailsSection);
 
-// дальше черная магия.
 // цикл делает столько итераций, сколько нужно отрисовать коктейлей
 //////////////////////////////////////////////////////////////////////////////////
 // НАЧАЛО ЦИКЛА
@@ -570,4 +569,3 @@ mainFunction(
 );
 
 // КОНЕЦ ЦИКЛА
-// СПАСИБО ЗА ВНИМАНИЕ :)
